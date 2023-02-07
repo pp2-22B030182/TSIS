@@ -4,5 +4,3 @@ def ounces(grams):
 grams = float(input())
 
 print(ounces(grams))
-# efen
-
