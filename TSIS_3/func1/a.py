@@ -9,7 +9,7 @@ print(ounces(grams))
 
 # 2
 def faran(cels):
-    return (cels-32) * (5 / 9) 
+    return (cels-32) * (5/9) 
     
 cels = float(input())
 
@@ -76,34 +76,44 @@ sentence = "We are ready"
 reverse(sentence)
 
 # 7
-def check(li):
-    i = 0
-    while i != li.__len__() :
-        if li[i] == 3 and i+1 != li.__len__() :
-                if li[i+1]==3 :
-                    return True 
+def has_33(nums):
+    for i in range(0,len(nums) - 1):
+        if nums[i] == 3 and nums[i + 1] == 3:
+            return True
+        
     return False
-
+        
+nums = input().split()
+        
+has_33(nums)
 # 8
-def checkSpy(li):
-    i = 0
-    while i != li.__len__() :
-        if li[i] == 0:
-            k = i
-            while k != li.__len__():
-                if li[k] == 0:
-                    o = k
-    
-                    while o != li.__len__():
-                        if li[o] == 7 :
-                            return True    
-                        o+=1
-                k+=1
-        i+=1
-    return False
+def spy_game(nums):
+    for i in range(0, len(nums)):
+        if nums[i] == 0:
+            for j in range(i+1, len(nums)):
+                if nums[j] == 0:
+                    for x in range(j+1, len(nums)):
+                        if (nums[x] == 7):
+                            return True
+        
+nums = input().split()
+
+for i in range(0, len(nums)):
+    nums[i] = int(nums[i])
+
+if spy_game(nums) == True:
+    print("True")
+else:
+    print("False")
 # 9
+import math
 def volume(rad):
     return (4/3)*math.pi* ( rad * rad * rad)
+
+
+rad = float(input())
+print(volume(rad))
+
 
 # 10
 
@@ -116,19 +126,23 @@ def uniq(li):
 
 # 11
 def isPalindrom(s):
-    i = 0
-    while i != math.ceil(s.__len__() / 2):
-        if s[i] != s[s.__len__()-i-1]:
-            return False
-        i+=1
-    return True
+    if s == s[::-1]:
+        print("Yes")
+    else:
+        print("No")
 
 # 12
 def histogram(li):
     for i in li:
+        i = int(i)
         for k in range(i):
-            print('*',end='')
+            k = int(k)
+            print('*',end ='')
         print()
+
+li = input().split()
+histogram(li)
+
 
 # 13
 import random
@@ -143,6 +157,7 @@ def guess_game():
         g = int(input())
         if g == snums:
             print("Good job, " + name + "! You guessed my number in " + str(i) + " guesses!")
+            break
         elif g < snums:
             print("Your guess is too low.")
         else:

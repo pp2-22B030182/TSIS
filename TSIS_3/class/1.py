@@ -1,36 +1,43 @@
 # 1
-class stringer:
-    def __init__(self, string):
-       self.string = string
+class String():
+
     def getString(self):
-        self.string = str(input())
+        d = input()
+        return d
+
     def printString(self):
-        print(self.string.upper())
+        print(self.getString().upper())
 
-#2 task 
-class Square:
-    def __init__(self, length ):
-        self.length  = length
+s = String()
+s.printString()
 
-    def area (self):
-        print(self.length * self.length == 0)  
-
-class Shape(Square):
-    def __init__(self, length = 0 ):
-        self.length  = length
+# 2
+class Shape():
+    def area(self):
+        return 0
     
-    def area (self) :
-        print(self.length * self.length)        
-#3
+class Square(Shape):
+    def __init__(self, length):
+        self.length = length
+    
+    def area(self):
+        return self.length**2
+    
+s = Shape()
+# 3
 
 class Rectangle(Shape):
 
-    def __init__(self,  width):
+    def __init__(self,length,width):
+        self.length = length
         self.width = width
 
-    def area (self, w):
-        print( self.length  * w)  
+    def area(self):
+        return self.length * self.width
 
+d = Rectangle(int(input()), int(input()))
+
+print(d.area())
 # 4
 import math
 
@@ -54,19 +61,22 @@ class point:
 
 
 #5
-class bank:
-    def __init__(self, name  , balance = 0 ):
-        self.name  = name
-        self.balance  = balance
-    def plus(self,add):
-        self.balance = self.balance+add
-        print('balance of',self.name,':',self.balance)
-    def denote(self,min):
-        if min > self.balance:
-            print("nehvatka")
+class Account():
+    def __init__(self, owner, bal):
+        self.owner = owner
+        self.bal = bal
+    def deposit(self, sum):
+        self.bal += sum
+    def withdraw(self, sum):
+        if self.bal < sum:
+            print("No enough money")
         else:
-            self.balance = self.balance - min
-            print('balance of',self.name,':',self.balance)
+            self.bal -= sum
+
+a = Account("Maksat", 100000)
+a.deposit(1000)
+a.withdraw(100)
+print(a.bal)
 
 #6
 def isPrime(x):
