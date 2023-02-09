@@ -124,12 +124,18 @@ def uniq(li):
             li1.append(i)
     return li1
 
+li = input().split()
+print(uniq(li))
+
 # 11
 def isPalindrom(s):
     if s == s[::-1]:
         print("Yes")
     else:
         print("No")
+
+s = input()
+isPalindrom(s)
 
 # 12
 def histogram(li):
