@@ -24,6 +24,7 @@ class Square(Shape):
         return self.length**2
     
 s = Shape()
+print(s.area())
 # 3
 
 class Rectangle(Shape):
@@ -41,23 +42,34 @@ print(d.area())
 # 4
 import math
 
-class point:
-    def __init__(self, x = 5  , y = 9 ):
-        self.x  = x
-        self.y  = y
+class Point():
 
-    def show(self):
-        print(f'{self.x}'+ ' '+ f'{self.y}')
-
-    def move(self, x , y):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        print('New coor:',self.x,self.y)
 
-    def dist(self,x,y):
-        d = math.sqrt(pow((self.x - x),2) + pow((self.y - y),2))
-        print(d)
+    def show(self):
+        print("Point {}, {}".format(self.x, self.y))
 
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+        print("New point {}, {}".format(self.x, self.y))
+
+
+    def dict(self, x,y):
+        a = math.sqrt((self.x - x)**2 + (self.y - y)**2)
+        print(a)
+
+x = int(input())
+x1 = int(input())
+y = int(input())
+y1 = int(input())
+
+s = Point(x, y)
+s.show()
+s.move(x1, y1)
+s.dict(x, y)
 
 
 #5
