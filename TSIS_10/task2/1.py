@@ -36,7 +36,7 @@ active = False
 text = ''
 image = pygame.image.load('snake.jpg')
 scale = pygame.transform.scale(image, (image.get_width() * 3.4 , image.get_height() *  2.48))
-image1 = pygame.image.load('fon.jpg')
+image1 = pygame.image.load('fon1.jpg')
 # scale = pygame.transform.scale(image, (image.get_width()*2.58, image.get_height()*2.2))
 sql1 = """
         SELECT * FROM snake_score
@@ -98,7 +98,7 @@ class Food: # создаем класс Food
         self.width = random.randint(10, 12)
 
     def draw(self): # функция, которая отрисовывает еду (прямоугольник на экране, зеленого цвета, координаты цента инициализированы выше, а длина = 15, а ширина инициализирована выше)
-        pygame.draw.rect(screen, (0, 255, 0), (self.x, self.y, 15, self.width))
+        pygame.draw.rect(screen, (255, 0, 0), (self.x, self.y, 15, self.width))
 
 F1 = Food() # вызываем класс Food
 
