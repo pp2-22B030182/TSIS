@@ -1,7 +1,0 @@
-select * from phonebook;
-
-select id, name from phonebook;
-
-select name from phonebook;
-
-select * from phonebook where name like 'M%';
